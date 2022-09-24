@@ -11,4 +11,4 @@ if __name__=='__main__':
         arguments,
         [math.cos(a) * math.sin(math.sin(a**2/20.0)) for a in arguments] #функция
     )
-    mpp.show() #ïîêàçûâàåì
+    mpp.show() #показываем
