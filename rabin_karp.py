@@ -20,17 +20,25 @@ def rabin_karp(text, pattern):
     ---------------------
         список позиций в тексте, с которых начинаются вхождения образца
     """
-    if text == '':
+    text_length = len(text)
+    pattern_length = len(pattern)
+
+    if text_length < pattern_length:  # Убираем случаи, когда строка меньше по длине, чем строка
         return []
-    if pattern == "":
+    if pattern == "":  # Подпустая строка входит всегда
         return [i for i in range(len(text))]
 
     result = []
-    pattern_hash = hash(pattern)
-    for i in range(len(text)-len(pattern)+1):
-        if hash(text[i:i+len(pattern)]) == pattern_hash:
-            result.append(i)
-        # Менять до сюда =) ---- ^^^^^ ----
+    pattern_sum = sum(list(map(ord, list(pattern))))  # Контрольная сумма для паттерна
+    part_sum = sum(list(map(ord, list(text[:pattern_length]))))  # Сумма кодов символов для части строки
+    for i in range(text_length-pattern_length + 1):
+        if part_sum == pattern_sum:
+            result.append(i)  # Если суммы совпадают, то все ОК (ну почти) и вносим в массив
+        try:
+            # Выкидываем из подстроки нулевой символ и добавляем следующий за оной
+            part_sum = part_sum - ord(text[i]) + ord(text[i + pattern_length])
+        except IndexError:
+            return result  # На случай, если выйдем из массива -- и в иных неприятных раскладах
     return result
 
 
