@@ -11,7 +11,7 @@ def generator(n):
     k = n/math.log(n)
     arr = []
     primes = 0
-    while len(arr) < k+1:
+    while len(arr) < 3*k+3:
         primes += 1
         if is_prime(primes) == "Is prime":
             arr.append(primes)
