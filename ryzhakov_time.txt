@@ -1,0 +1,4 @@
+pure python: 0.682
+pure cython: 0.605
+mypy: 0.647
+numba: 1.276
