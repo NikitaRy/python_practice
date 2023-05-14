@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700&family=Montserrat&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Nikita Ryzhakov</title>
+</head>
+<body>
+<div class="window">
+    <div class="text_block">
+        <h1 class="caption">Nikita Ryzhakov</h1>
+        <p class="text">An Young Scientist. <br/> My science interests are algebra and number theory,
+        cryptography and game theory's applications in education and biology</p>
+        <a href="#email_form"><button>Scroll and send me an e-mail</button></a>
+    </div>
+</div>
+<div class="window">
+    <div class="textblock">
+    <h2 class="center_text">My paper and conferences</h2>
+    <ul>
+        <li class="text">On abelian sandpiles applying for hash-function building (pre-print)</li>
+        <li class="text">Participant on Young Scientists' Congress in Sirius (2022)</li>
+    </ul>
+    </div>
+</div>
+<div class="window">
+    <form action="{{url_for('submit')}}" name="email_form" id="email_form" method="post">
+    <div class="text_block">
+        <h1 class="caption">Send me an e-mail</h1>
+        <textarea name="text_to_send">You can send me an e-mail...</textarea>
+        <button type="submit">Send me an e-mail</button>
+    </div>
+    </form>
+</div>
+</body>
+</html>
