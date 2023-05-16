@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='static', static_url_path='', template_folde
 def send_email(message):
 
     sender = "flaskhomework@yandex.ru"
-    password = "ngdfemhgxizcimsm"  # Хвала Яндексу, что не приходится светить реальным паролем
+    password = "...."  # Хвала Яндексу, что не приходится светить реальным паролем
 
     server = smtplib.SMTP_SSL('smtp.yandex.com', 465)
     server.ehlo()
